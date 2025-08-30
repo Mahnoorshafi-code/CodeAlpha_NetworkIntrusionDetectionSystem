@@ -20,8 +20,8 @@ As a demo, we configure Suricata to detect *ICMP Ping traffic*.
 
 Update and install Suricata:  
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install suricata -y
+```sudo apt update && sudo apt upgrade -y
+```sudo apt install suricata -y
 
 ##  Configuration
 
