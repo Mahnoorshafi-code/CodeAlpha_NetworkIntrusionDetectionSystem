@@ -26,32 +26,33 @@ sudo apt install suricata -y
 ```
 
 ##  Configuration
-
+```bash
 sudo nano /etc/suricata/suricata.yaml
+```
 default-rule-path: /etc/suricata/rules rule-files: - local.rules 
 
 ## Add Custom Detection Rule
-
+```bash
 sudo nano /etc/suricata/rules/local.rules
-
+```
 alert icmp any any -> any any (msg:"ICMP Ping detected"; sid:1000001; rev:1;) 
 
 ## Test the Configuration
-
+```bash
 sudo suricata -T -c /etc/suricata/suricata.yaml 
-
+```
 ## ▶ Running Suricata
-
+```bash
 sudo suricata -c /etc/suricata/suricata.yaml -i eth0 
-
+```
 ## 🧪 Generating Test Traffic
-
+```bash
 ping -c 4 8.8.8.8 
-
+```
 ## 📄 Viewing Alerts
-
+```bash
 cat /var/log/suricata/fast.log 
-
+```
 ## Example Output:
 
 08/30/2025-14:21:12.345678 [] [1:1000001:1] ICMP Ping detected [] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.10 -> 8.8.8.8 
